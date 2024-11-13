@@ -1,4 +1,5 @@
 import mysql.connector
+import time
 from mysql.connector import Error
 
 try:
@@ -17,10 +18,16 @@ try:
         # Crear un cursor para ejecutar consultas SQL
         cursor = connection.cursor()
         
+        start_time = time.time()
         # Ejemplo de consulta: Selecciona todos los jugadores
         cursor.execute("SELECT * FROM jugadores;")
         rows = cursor.fetchall()
 
+        end_time = time.time()
+
+
+        execution_time = end_time - start_time
+        print("El tiempo de consulta ha sido: ",execution_time)
         print("Datos en la tabla jugadores:")
         for row in rows:
             print(row)
