@@ -31,23 +31,31 @@ El repositorio incluye un archivo `environment.yml` que define las dependencias 
 2. **Activar el entonrno** :
      ```bash
      conda activate nombreDeTuEntorno
+
 ## Ejecución de Docker Compose
-1. **Cassandra**: Para correr el contenedor de Cassandra primero te tendrás que situar donde esté situada el docker compose de cassandra y correrlo con el siguiente comando: 
-    ```bash
-   # Correr el contenedor
-    docker-compose up --build 
-    
-    # Verificar que el contenedor esté en ejecución
-    docker ps
-
-  2.**MySQL**: Para correr el contenedor de Cassandra primero te tendrás que situar donde esté situada    el docker compose de mysql y correrlo con el siguiente comando: 
-  ```bash 
-     # Iniciar el contenedor de MySQL
-     docker compose up --build
-
-     # Verificar que el contenedor esté en ejecución
-      docker ps
 
 
+  1. **Cassandra**: 
+        - Primero debes situarte en el directorio donde se encuentra el archivo `docker-compose.yml` de Cassandra y ejecutarlo con el siguiente comando:
+        
+        ```bash
+        # Correr el contenedor de Cassandra
+        docker-compose up --build 
+        
+        # Verificar que el contenedor esté en ejecución
+        docker ps
+        ```
+        
 
-   
+  2. **MySQL**: 
+        - Primero debes situarte en el directorio donde se encuentra el archivo `docker-compose.yml` de MySQL y ejecutarlo con el siguiente comando:
+          
+
+        ```bash
+        # Iniciar el contenedor de MySQL
+        docker-compose up --build
+
+        # Verificar que el contenedor esté en ejecución
+        docker ps
+        ```
+
