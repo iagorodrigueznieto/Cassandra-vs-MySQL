@@ -1,0 +1,62 @@
+[
+    {
+        "nombre": "Bethany Butler",
+        "posicion": "Delantero",
+        "equipo": "Equipo C",
+        "fecha_nacimiento": "1989-10-04"
+    },
+    {
+        "nombre": "George Carr",
+        "posicion": "Portero",
+        "equipo": "Equipo B",
+        "fecha_nacimiento": "2002-02-03"
+    },
+    {
+        "nombre": "Matthew Silva",
+        "posicion": "Portero",
+        "equipo": "Equipo C",
+        "fecha_nacimiento": "2003-05-27"
+    },
+    {
+        "nombre": "Kelli Ramos",
+        "posicion": "Delantero",
+        "equipo": "Equipo D",
+        "fecha_nacimiento": "2002-07-31"
+    },
+    {
+        "nombre": "Tonya Gray",
+        "posicion": "Portero",
+        "equipo": "Equipo D",
+        "fecha_nacimiento": "1984-06-14"
+    },
+    {
+        "nombre": "Loretta Porter",
+        "posicion": "Centrocampista",
+        "equipo": "Equipo D",
+        "fecha_nacimiento": "1994-03-10"
+    },
+    {
+        "nombre": "Brian Taylor",
+        "posicion": "Defensa",
+        "equipo": "Equipo A",
+        "fecha_nacimiento": "2004-04-29"
+    },
+    {
+        "nombre": "Mrs. Rebecca Baker MD",
+        "posicion": "Portero",
+        "equipo": "Equipo D",
+        "fecha_nacimiento": "1989-01-11"
+    },
+    {
+        "nombre": "Kristin Pruitt",
+        "posicion": "Defensa",
+        "equipo": "Equipo C",
+        "fecha_nacimiento": "2000-06-24"
+    },
+    {
+        "nombre": "Marc Hall",
+        "posicion": "Delantero",
+        "equipo": "Equipo B",
+        "fecha_nacimiento": "1997-08-31"
+    }
+]

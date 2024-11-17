@@ -1,27 +1,41 @@
-version: '3.8'
-
-services:
-  cassandra:
-    image: cassandra:latest
-    container_name: cassandra_container
-    environment:
-      - CASSANDRA_CLUSTER_NAME=my_cassandra_cluster
-      - CASSANDRA_DC=DC1
-      - CASSANDRA_RACK=RAC1
-    ports:
-      - "7000:7000"  # Comunicación entre nodos
-      - "7001:7001"  # Comunicación interna segura
-      - "9042:9042"  # Cliente CQL
-      - "9043:9043"  # Cliente CQL seguro
-      - "9191:9191"  # Puerto de autenticación
-    volumes:
-      - cassandra_data:/var/lib/cassandra
-    networks:
-      - cassandra_network
+version: "3.9"
 
 networks:
   cassandra_network:
     driver: bridge
+
+services:
+  cassandra_server:
+    image: cassandra:latest
+    container_name: cassandra_server
+    networks:
+      - cassandra_network
+    ports:
+      - "9042:9042"
+    environment:
+      CASSANDRA_CLUSTER_NAME: "TestCluster"
+      CASSANDRA_NUM_TOKENS: 256
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+
+  data_loader:
+    image: cassandra:latest
+    container_name: cassandra_data_loader
+    networks:
+      - cassandra_network
+    working_dir: /app
+    volumes:
+      - .:/app
+    entrypoint: >
+      sh -c "
+      until cqlsh cassandra_server -e 'DESCRIBE KEYSPACES'; do
+        echo 'Esperando a Cassandra...';
+        sleep 5;
+      done &&
+      cqlsh cassandra_server -f /app/trabajo.cql"
+    depends_on:
+      - cassandra_server
 
 volumes:
   cassandra_data:
