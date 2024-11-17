@@ -1,4 +1,5 @@
 import json
+import os
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 from uuid import uuid4
@@ -34,10 +35,13 @@ def procesar_json(json_data):
 
     print("Datos insertados correctamente.")
 
-# Ejemplo de cómo podrías usar el script
 if __name__ == "__main__":
+    # Obtener la ruta del archivo JSON en la carpeta anterior al directorio actual
+    script_dir = os.path.dirname(os.path.realpath(__file__))  # Directorio actual
+    json_path = os.path.join(script_dir, '..', 'jugadores.json')  # Ruta al archivo en el directorio anterior
+
     # Cargar el archivo JSON con la información de los jugadores
-    with open('jugadores.json', 'r') as f:
+    with open(json_path, 'r') as f:
         jugadores_json = json.load(f)
 
     # Procesar e insertar los jugadores
