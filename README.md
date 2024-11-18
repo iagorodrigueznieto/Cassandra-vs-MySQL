@@ -39,10 +39,8 @@ El repositorio incluye un archivo `environment.yml` que define las dependencias 
         - Primero debes situarte en el directorio donde se encuentra el archivo `docker-compose.yml` de Cassandra y ejecutarlo con el siguiente comando:
         
         ```bash
-        # Correr el contenedor de Cassandra
         docker-compose up --build 
-        
-        # Verificar que el contenedor esté en ejecución
+
         docker ps
         ```
         
@@ -52,10 +50,8 @@ El repositorio incluye un archivo `environment.yml` que define las dependencias 
           
 
         ```bash
-        # Iniciar el contenedor de MySQL
         docker-compose up --build
 
-        # Verificar que el contenedor esté en ejecución
         docker ps
         ```
 
